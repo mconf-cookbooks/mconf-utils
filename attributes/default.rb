@@ -6,7 +6,8 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 #
 
-default[:mconf][:user] = "mconf"
-default[:mconf][:dir] = "/var/mconf"
-default[:mconf][:tools][:dir] = "/var/mconf/tools"
-default[:mconf][:log][:dir] = "/var/mconf/log"
+default['mconf']['user'] = "mconf"
+default['mconf']['dir'] = "/var/mconf"
+default['mconf']['tools']['dir'] = "/var/mconf/tools"
+default['mconf']['log']['dir'] = "/var/mconf/log"
+default['mconf']['reboot_when_required'] = false

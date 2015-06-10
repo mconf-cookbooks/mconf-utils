@@ -13,7 +13,7 @@
 
 package "update-notifier-common"
 
-if tagged?("reboot") # or File.exists? "/var/run/reboot-required"
+if tagged?("reboot") or (File.exists? "/var/run/reboot-required" and node['mconf']['reboot_when_required'])
   node.run_state['reboot'] = true
   untag("reboot")
 end
