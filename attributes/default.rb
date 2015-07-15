@@ -11,3 +11,4 @@ default['mconf']['dir'] = "/var/mconf"
 default['mconf']['tools']['dir'] = "/var/mconf/tools"
 default['mconf']['log']['dir'] = "/var/mconf/log"
 default['mconf']['reboot_when_required'] = false
+default['chef_client']['init_style'] = 'cron'

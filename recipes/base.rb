@@ -62,3 +62,14 @@ logrotate_app "rotate-chef" do
   frequency "daily"
   rotate 15
 end
+
+# remove cron job if chef isn't supposed to use it
+if node["chef_client"]["init_style"] != "cron"
+  cron "chef-client" do
+    action :delete
+  end
+
+  cron_d "chef-client" do
+    action :delete
+  end
+end
