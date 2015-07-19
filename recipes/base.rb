@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: mconf-node
+# Cookbook Name:: mconf-utils
 # Recipe:: base
 # Author:: Felipe Cecagno (<felipe@mconf.org>)
 # Author:: Mauricio Cruz (<brcruz@gmail.com>)
