@@ -16,4 +16,6 @@ script "remove unused kernel packages" do
   code <<-EOH
     dpkg -l linux-{image,headers}-* | awk '/^ii/{print $2}' | egrep '[0-9]+\.[0-9]+\.[0-9]+' | grep -v $(uname -r | cut -f1,2 -d"-") | xargs apt-get -y purge
   EOH
+  # do not execute if there's a pending reboot
+  not_if { node.run_state['reboot'] == true }
 end
