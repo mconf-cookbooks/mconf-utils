@@ -73,3 +73,8 @@ if node["chef_client"]["init_style"] != "cron"
     action :delete
   end
 end
+
+execute "fix dpkg" do
+  command "dpkg --configure -a"
+  action :run
+end
