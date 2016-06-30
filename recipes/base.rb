@@ -75,6 +75,6 @@ if node["chef_client"]["init_style"] != "cron"
 end
 
 execute "fix dpkg" do
-  command "dpkg --configure -a"
+  command "dpkg --configure -a --force-confdef --force-confnew"
   action :run
 end
