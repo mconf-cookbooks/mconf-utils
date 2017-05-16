@@ -11,7 +11,9 @@
 # file, You can obtain one at http://mozilla.org/MPL/2.0/.
 #
 
-package "update-notifier-common"
+package "update-notifier-common" do
+  options "-o Dpkg::Options::='--force-confnew'"
+end
 
 if tagged?("reboot") or (File.exists? "/var/run/reboot-required" and node['mconf']['reboot_when_required'])
   node.run_state['reboot'] = true
